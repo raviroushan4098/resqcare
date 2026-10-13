@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Design tokens. Values from the spec (section 3.1) plus three AA-driven
+ * additions, each checked by src/styles/tokens.test.ts:
+ *   --reported-text  #B26A00 is 4.2:1 on white, below AA for small badge text.
+ *                    It stays for icons and borders (3:1); text uses this.
+ *   --accent-strong  #0E8F8A is 3.9:1 on white; used for teal text and fills
+ *                    carrying white text.
+ *   --border-strong  #D6E0EB is decorative only; input outlines need 3:1.
+ *   --primary        spec #1F6FEB is 4.4:1 on the page background (#F7FAFC),
+ *                    so links failed AA; darkened to #1A66D9 (5.1:1 on --bg).
+ */
+:root {
+  --bg: #f7fafc;
+  --surface: #ffffff;
+  --text: #12284c;
+  --text-muted: #5b6b7f;
+  --primary: #1a66d9;
+  --primary-hover: #1557bc;
+  --accent: #0e8f8a;
+  --accent-strong: #0b7570;
+  --emergency: #c62828;
+  --emergency-hover: #a61f1f;
+  --confirmed: #1b7f4c;
+  --reported: #b26a00;
+  --reported-text: #8f5500;
+  --unknown: #5b6b7f;
+  --border: #d6e0eb;
+  --border-strong: #7a8da3;
+  --focus: #1f6feb;
+
+  /* Tinted backgrounds for badges and banners (text on them is checked for AA). */
+  --confirmed-bg: #eef8f2;
+  --reported-bg: #fff6e5;
+  --unknown-bg: #f0f3f7;
+  --emergency-bg: #fdecec;
+  --primary-bg: #eef4fe;
+
+  --radius-card: 16px;
+  --radius-control: 12px;
+
+  /* Height reserved at the bottom of the viewport for the mobile EmergencyBar. */
+  --emergency-bar-h: 72px;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-bg text-text font-sans antialiased;
+    font-size: 16px;
+    line-height: 1.5;
+    /* Keep content clear of the fixed EmergencyBar on mobile. */
+    padding-bottom: calc(var(--emergency-bar-h) + env(safe-area-inset-bottom));
+  }
+
+  @media (min-width: 768px) {
+    body {
+      padding-bottom: 0;
+    }
+  }
+
+  h1 { @apply text-2xl font-bold leading-tight; }
+  h2 { @apply text-xl font-semibold leading-snug; }
+  h3 { @apply text-lg font-semibold leading-snug; }
+
+  :focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Devanagari needs extra vertical room for matras. */
+  :lang(hi) {
+    line-height: 1.65;
+  }
+}
+
+@layer utilities {
+  .motion-fade {
+    transition: opacity 180ms ease-out, transform 180ms ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

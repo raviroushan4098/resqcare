@@ -1,0 +1,8 @@
+{
+  "crons": [
+    { "path": "/api/jobs/freshness-sweep", "schedule": "*/15 * * * *" },
+    { "path": "/api/jobs/booking-timeout", "schedule": "* * * * *" },
+    { "path": "/api/jobs/demo-ticker", "schedule": "* * * * *" },
+    { "path": "/api/jobs/retention-cleanup", "schedule": "0 3 * * *" }
+  ]
+}

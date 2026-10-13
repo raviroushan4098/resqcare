@@ -1,0 +1,114 @@
+rules_version = '2';
+
+// Second line of defence (Part E.1). All writes go through the API (Admin SDK),
+// which enforces the policy layer. Clients may only READ what they are allowed
+// to see, mainly to subscribe with onSnapshot for live status.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+    function role() { return signedIn() ? request.auth.token.role : null; }
+    function isAdmin() { return role() == 'super_admin'; }
+    function hospitalClaim() { return signedIn() ? request.auth.token.hospitalId : null; }
+    function providerClaim() { return signedIn() ? request.auth.token.providerId : null; }
+    function isHospitalUser() { return role() in ['hospital_admin', 'hospital_staff']; }
+    function approvedHospital(id) {
+      return get(/databases/$(database)/documents/hospitals/$(id)).data.verificationStatus == 'approved';
+    }
+
+    // Default deny.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    match /users/{uid} {
+      allow read: if signedIn() && (request.auth.uid == uid || isAdmin());
+    }
+
+    // Public directory: approved hospitals only.
+    match /hospitals/{id} {
+      allow read: if resource.data.verificationStatus == 'approved' || isAdmin()
+        || (isHospitalUser() && hospitalClaim() == id);
+    }
+    match /hospitalFacilities/{id} {
+      allow read: if approvedHospital(resource.data.hospitalId) || isAdmin();
+    }
+    match /hospitalAvailability/{hospitalId} {
+      allow read: if approvedHospital(hospitalId) || isAdmin()
+        || (isHospitalUser() && hospitalClaim() == hospitalId);
+      match /history/{entry} {
+        allow read: if isAdmin() || (isHospitalUser() && hospitalClaim() == hospitalId);
+      }
+    }
+    match /departments/{id} {
+      allow read: if (resource.data.confirmed == true && approvedHospital(resource.data.hospitalId)) || isAdmin();
+    }
+    match /specialists/{id} {
+      allow read: if (resource.data.confirmed == true && approvedHospital(resource.data.hospitalId)) || isAdmin();
+    }
+
+    match /reviews/{id} {
+      allow read: if resource.data.status == 'approved' || isAdmin();
+    }
+
+    match /systemConfiguration/{id} {
+      allow read: if isAdmin();
+    }
+
+    // Bookings: owner, assigned provider and driver, destination hospital, admin.
+    match /ambulanceBookings/{id} {
+      allow read: if signedIn() && (
+        resource.data.patientUid == request.auth.uid
+        || (role() == 'dispatcher' && resource.data.providerId == providerClaim())
+        || (role() == 'dispatcher' && providerClaim() in resource.data.candidateProviderIds)
+        || (role() == 'driver' && resource.data.driverId == request.auth.uid)
+        || (isHospitalUser() && resource.data.destinationHospitalId == hospitalClaim())
+        || isAdmin()
+      );
+      // Live location only for the owner and the provider while the trip is active.
+      match /locations/{point} {
+        allow read: if signedIn() && (
+          get(/databases/$(database)/documents/ambulanceBookings/$(id)).data.status in ['Assigned', 'EnRoute']
+        ) && (
+          get(/databases/$(database)/documents/ambulanceBookings/$(id)).data.patientUid == request.auth.uid
+          || get(/databases/$(database)/documents/ambulanceBookings/$(id)).data.providerId == providerClaim()
+          || isAdmin()
+        );
+      }
+    }
+
+    match /ambulances/{id} {
+      allow read: if isAdmin() || (role() == 'dispatcher' && resource.data.providerId == providerClaim());
+    }
+    match /ambulanceProviders/{id} {
+      allow read: if isAdmin() || (role() == 'dispatcher' && providerClaim() == id);
+    }
+
+    // Hospital inbox (no contact details here; those live in a server-only collection).
+    match /emergencyRequests/{id} {
+      allow read: if signedIn() && (
+        resource.data.patientRef == request.auth.uid
+        || (isHospitalUser() && resource.data.hospitalId == hospitalClaim())
+        || isAdmin()
+      );
+    }
+    match /emergencyRequestContacts/{id} {
+      allow read: if false;
+    }
+
+    match /notifications/{id} {
+      allow read: if signedIn() && resource.data.userId == request.auth.uid;
+    }
+
+    match /hospitalVerifications/{id} {
+      allow read: if isAdmin() || (role() == 'hospital_admin' && resource.data.hospitalId == hospitalClaim());
+    }
+
+    match /auditLogs/{id} {
+      allow read: if isAdmin() || (role() == 'hospital_admin' && resource.data.hospitalId == hospitalClaim());
+    }
+
+    // searchLogs, flags, idempotencyKeys, rateLimits, applications, reviewReports:
+    // server only (default deny).
+  }
+}

@@ -1,0 +1,1260 @@
+{
+  "meta": {
+    "title": "ResQCare AI: find emergency hospital care",
+    "description": "Find nearby hospitals that can treat your emergency, with honest data on what is confirmed. Call 112 in a life-threatening emergency."
+  },
+  "common": {
+    "close": "Close",
+    "cancel": "Cancel",
+    "dismiss": "Dismiss",
+    "loading": "Loading",
+    "saved": "Saved",
+    "breadcrumb": "Breadcrumb"
+  },
+  "shell": {
+    "skipToMain": "Skip to main content",
+    "logoLabel": "ResQCare AI home",
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "footer": {
+      "disclaimer": "ResQCare AI helps you find hospitals and request ambulances. It does not give medical advice, and hospital information can change. In a life-threatening emergency, call 112 now.",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "medicalDisclaimer": "Medical disclaimer",
+      "navLabel": "Legal"
+    }
+  },
+  "emergencyBar": {
+    "regionLabel": "Emergency numbers",
+    "call112": "Call 112",
+    "call112Label": "Call emergency services 112",
+    "ambulance": "Ambulance",
+    "call108Label": "Call ambulance 108",
+    "call102Label": "Call ambulance 102",
+    "inlineLabel": "Emergency:"
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "hi": "हिन्दी"
+  },
+  "roles": {
+    "patient": "Patient",
+    "hospital_admin": "Hospital admin",
+    "hospital_staff": "Hospital staff",
+    "dispatcher": "Ambulance dispatcher",
+    "driver": "Ambulance driver",
+    "super_admin": "Super admin"
+  },
+  "offline": {
+    "title": "You are offline. Emergency numbers still work.",
+    "lastSync": "Last updated {time}",
+    "neverSynced": "No data has been loaded yet."
+  },
+  "errors": {
+    "title": "Something went wrong",
+    "VALIDATION_FAILED": "Some details need fixing. Check the highlighted fields.",
+    "UNAUTHENTICATED": "Please sign in to continue.",
+    "FORBIDDEN": "You don't have access to this page.",
+    "NOT_FOUND": "We couldn't find what you were looking for.",
+    "CONFLICT": "Someone else changed this. We've loaded the latest version. Please check it and try again.",
+    "RULE_VIOLATION": "This action isn't allowed right now.",
+    "RATE_LIMITED": "Too many attempts. Please try again in {seconds} seconds.",
+    "UPSTREAM_FAILED": "Some services are unavailable. You can still browse hospitals and call emergency numbers.",
+    "UPSTREAM_TIMEOUT": "A service took too long to respond. You can still browse hospitals and call emergency numbers.",
+    "INTERNAL": "Something went wrong on our side. Reference: {requestId}",
+    "NETWORK_ERROR": "Can't reach the server. Check your connection. Emergency numbers still work.",
+    "CONTRACT_MISMATCH": "We received unexpected data. Reference: {requestId}",
+    "retry": "Try again"
+  },
+  "permission": {
+    "title": "You don't have access to this page",
+    "body": "Your account cannot open this area. You can sign in with a different account, or go back to the home page.",
+    "switchAccount": "Sign in as another account",
+    "home": "Go to home page"
+  },
+  "dev": {
+    "open": "Dev",
+    "title": "Developer tools",
+    "description": "Scenario switch and role switcher for local testing. Not shown in production.",
+    "scenario": "Scenario",
+    "role": "Sign in as",
+    "signedInAs": "Signed in as {role}",
+    "signedOut": "Not signed in",
+    "signOut": "Sign out"
+  },
+  "home": {
+    "title": "Find emergency care fast",
+    "lead": "See nearby hospitals that can treat your emergency, and what is confirmed about them.",
+    "findHospital": "Find a hospital now",
+    "requestAmbulance": "Request ambulance",
+    "noLogin": "No sign-in needed to search or call.",
+    "categoriesTitle": "What is happening?",
+    "howTitle": "How it works",
+    "step1": {
+      "title": "Choose",
+      "body": "Pick the type of emergency and share or type your location."
+    },
+    "step2": {
+      "title": "See verified options",
+      "body": "Hospitals that have what you need, with what is confirmed and how recently."
+    },
+    "step3": {
+      "title": "Get help",
+      "body": "Call the hospital, get directions, or request an ambulance."
+    },
+    "honestTitle": "Honest data",
+    "honestBody": "Every hospital fact shows how sure we are and when it was last updated."
+  },
+  "categories": {
+    "cardiac": {
+      "title": "Heart",
+      "hint": "Chest pain, heart attack signs"
+    },
+    "stroke": {
+      "title": "Stroke",
+      "hint": "Face drooping, slurred speech, weakness"
+    },
+    "accident": {
+      "title": "Accident",
+      "hint": "Road or fall injury"
+    },
+    "breathing": {
+      "title": "Breathing",
+      "hint": "Severe breathlessness, choking"
+    },
+    "trauma": {
+      "title": "Serious injury",
+      "hint": "Heavy bleeding, burns, wounds"
+    },
+    "other": {
+      "title": "Other",
+      "hint": "Any other urgent problem"
+    }
+  },
+  "capabilities": {
+    "emergency_24x7": "24x7 emergency",
+    "cath_lab": "Cath lab",
+    "ct_scan": "CT scan",
+    "mri": "MRI",
+    "stroke_unit": "Stroke unit",
+    "trauma_center": "Trauma centre",
+    "icu": "ICU",
+    "ventilator": "Ventilators",
+    "blood_bank": "Blood bank",
+    "burn_unit": "Burn unit",
+    "nicu": "Newborn ICU",
+    "dialysis": "Dialysis"
+  },
+  "confidence": {
+    "confirmed": {
+      "label": "Confirmed",
+      "group": "Confirmed",
+      "help": "Verified and updated within the last {window}.",
+      "helpShort": "Verified recently.",
+      "legend": "Verified by an admin or document, and recent enough to rely on."
+    },
+    "reported": {
+      "label": "Reported, call to confirm",
+      "group": "Reported",
+      "help": "Reported by the hospital or older than {window}. Call to confirm.",
+      "helpShort": "Not recently verified. Call to confirm.",
+      "legend": "Said by the hospital, or verified a while ago. Call the hospital to confirm."
+    },
+    "unknown": {
+      "label": "Unknown",
+      "group": "Unknown",
+      "help": "No information. Call the hospital.",
+      "helpShort": "No information.",
+      "legend": "We have no information. Do not assume it is available."
+    },
+    "updated": "updated {time}",
+    "noTime": "no update time"
+  },
+  "verification": {
+    "approved": "Verified hospital",
+    "pending": "Verification pending",
+    "unverified": "Unverified: details not confirmed",
+    "rejected": "Verification rejected",
+    "suspended": "Suspended"
+  },
+  "location": {
+    "why": "To find hospitals near you, we need your location.",
+    "who": "Your location is used only for this search. It is not saved with your search and is shared with a hospital only if you choose to.",
+    "useMyLocation": "Use my location",
+    "requesting": "Getting your location…",
+    "enterManually": "Enter address or place",
+    "deniedTitle": "Location not available",
+    "deniedBody": "No problem. Choose a nearby place below instead. You can still search.",
+    "searchLabel": "Search for a place",
+    "searchPlaceholder": "e.g. Pari Chowk",
+    "suggestions": "Suggested places",
+    "useCityCentre": "Use {city} centre",
+    "tryGpsAgain": "Try my location again",
+    "usingGps": "Using your current location",
+    "usingPlace": "Using {place}",
+    "pinnedPoint": "selected point",
+    "change": "Change",
+    "whyPickup": "The ambulance crew needs your pickup location to reach you."
+  },
+  "emergency": {
+    "title": "Find emergency care",
+    "lifeThreatening": "Life-threatening?",
+    "call112Now": "Call 112 now",
+    "formLabel": "Emergency search",
+    "step1": "1. Where are you?",
+    "step2": "2. What is happening?",
+    "step3": "3. Anything else? (optional)",
+    "symptomsLabel": "Short description",
+    "symptomsHint": "Do not enter names or medical history.",
+    "counter": "{count} of {max} characters",
+    "radiusLabel": "Search within",
+    "km": "{km} km",
+    "submit": "Find hospitals",
+    "chooseCategory": "Choose what is happening",
+    "noLocationNote": "No location chosen: we will search around the city centre."
+  },
+  "results": {
+    "title": "Results",
+    "prompt": "Results appear here after you search.",
+    "searching": "Searching for hospitals",
+    "count": "{count, plural, =0 {No hospitals found} one {# hospital found} other {# hospitals found}}",
+    "viewLabel": "View",
+    "list": "List",
+    "map": "Map",
+    "listLabel": "Ranked hospitals",
+    "mapLabel": "Map of results",
+    "sortLabel": "Sort by",
+    "sortRank": "Best match",
+    "sortDistance": "Nearest",
+    "compareN": "Compare ({count})",
+    "compareTitle": "Compare hospitals",
+    "rank": "Rank {rank}:",
+    "distanceEta": "{distance} away, about {eta} (estimate)",
+    "distanceOnly": "{distance} away (estimate)",
+    "etaUnknown": "time unknown",
+    "facilities": "Key facilities",
+    "matchedBecause": "Matched because",
+    "notVerified": "Not verified",
+    "availability": "Beds right now",
+    "availabilityUnknown": "Unknown. Call to check.",
+    "availabilitySummary": "ICU {icu} · Emergency {er} · Ventilators {vent}",
+    "callToConfirm": "Call to confirm",
+    "call": "Call hospital",
+    "callLabel": "Call {name}, {phone}",
+    "details": "Details",
+    "compare": "Compare",
+    "share": "Share details with this hospital",
+    "degradedAi": "Smart matching unavailable, showing standard matching.",
+    "degradedMaps": "Distances are approximate.",
+    "cachedTitle": "Showing your last search",
+    "cachedBody": "You are offline. These results may be out of date. Call to confirm.",
+    "noMatchTitle": "We could not find a confident match",
+    "noMatchBody": "No hospital in this area has every facility this emergency needs on record. That does not mean none can help. Call one of these, or call 112.",
+    "nearestToCall": "Nearest hospitals to call",
+    "browseAll": "Browse all hospitals"
+  },
+  "reasons": {
+    "has_capability": "Has {capability} ({tier})",
+    "beds_icu": "{count} ICU beds free ({tier})",
+    "beds_emergency": "{count} emergency beds free ({tier})",
+    "beds_ventilator": "{count} ventilators free ({tier})",
+    "closest": "Closest match, {distance} (estimate)",
+    "specialist_on_duty": "Specialist on duty",
+    "open_24x7": "Emergency open 24x7",
+    "capability_not_recent": "{capability} not verified recently",
+    "availability_stale": "Bed numbers are not recent",
+    "availability_unknown": "Bed numbers unknown"
+  },
+  "share": {
+    "title": "Share details with {name}?",
+    "description": "The hospital can prepare for your arrival. Nothing is shared unless you agree.",
+    "shares": {
+      "category": "The type of emergency",
+      "location": "Your approximate location (about 1 km)",
+      "eta": "Your estimated arrival time"
+    },
+    "name": "Name",
+    "phone": "Phone",
+    "optional": "Optional",
+    "consent": "I agree to share these details with this hospital",
+    "retention": "Shared details are deleted after 30 days.",
+    "send": "Share with hospital",
+    "sent": "Details shared",
+    "sentBody": "The hospital has received your details. Still call them, or 112 if it is life-threatening.",
+    "done": "Done"
+  },
+  "maps": {
+    "unavailableTitle": "Map not available",
+    "unavailableBody": "The same information is shown as text on this page."
+  },
+  "hospitals": {
+    "title": "Hospitals",
+    "description": "Browse and compare hospitals, even without your location.",
+    "count": "{count, plural, =0 {No hospitals} one {# hospital} other {# hospitals}}",
+    "loading": "Loading hospitals",
+    "empty": "No hospitals match these filters",
+    "emptyBody": "Try removing a filter.",
+    "loadMore": "Show more",
+    "mapLabel": "Map of hospitals",
+    "compareLimit": "You can compare up to 3 hospitals.",
+    "specialties": "Specialties: {list}",
+    "availabilityLabel": "Beds",
+    "noClaims": "Unverified: no availability shown",
+    "filters": {
+      "label": "Filter hospitals",
+      "q": "City, area or name",
+      "qPlaceholder": "e.g. Greater Noida",
+      "specialty": "Specialty",
+      "any": "Any",
+      "confidence": "Bed data confidence",
+      "emergency24x7": "24x7 emergency only",
+      "verifiedOnly": "Verified hospitals only",
+      "reset": "Clear filters"
+    }
+  },
+  "compare": {
+    "caption": "Hospital comparison",
+    "feature": "Feature",
+    "distance": "Distance",
+    "availability": "Beds",
+    "unknown": "Unknown",
+    "notListed": "Not listed"
+  },
+  "facilities": {
+    "none": "No facilities on record."
+  },
+  "availability": {
+    "icu": "ICU beds",
+    "emergency": "Emergency beds",
+    "ventilators": "Ventilators",
+    "countOfTotal": "{count} of {total}",
+    "unknown": "Unknown",
+    "callToConfirm": "Call to confirm",
+    "source": "Source: {source}",
+    "sources": {
+      "hospital": "hospital staff",
+      "admin": "admin",
+      "seed": "demo data"
+    }
+  },
+  "profile": {
+    "title": "Hospital",
+    "loading": "Loading hospital",
+    "hours": "Hours: {hours}",
+    "emergencyHours": "Emergency: {hours}",
+    "call": "Call",
+    "callLabel": "Call {name}, {phone}",
+    "directions": "Get directions",
+    "requestAmbulance": "Request ambulance to this hospital",
+    "unverifiedTitle": "Unverified hospital",
+    "unverifiedBody": "These details have not been confirmed. Availability is not shown. Call the hospital before going.",
+    "staleTitle": "Bed numbers are not recent",
+    "staleBody": "Call to confirm before going.",
+    "availability": "Availability",
+    "facilities": "Facilities",
+    "windowMinutes": "{minutes} minutes",
+    "departments": "Departments",
+    "specialists": "Specialists",
+    "onDuty": "on duty",
+    "noneConfirmed": "None confirmed.",
+    "map": "Location",
+    "mapLabel": "Map showing {name}",
+    "mapNote": "Travel times are estimates.",
+    "reviewsTitle": "Patient opinions",
+    "ratingSummary": "{avg} average from {count, plural, one {# review} other {# reviews}}",
+    "noReviews": "No reviews yet.",
+    "allReviews": "Read all reviews",
+    "report": {
+      "open": "Report incorrect information",
+      "title": "Report incorrect information",
+      "description": "Tell us what looks wrong. An admin will check it.",
+      "field": "What is wrong?",
+      "fields": {
+        "availability": "Bed availability",
+        "facilities": "Facilities",
+        "contact": "Phone number",
+        "address": "Address",
+        "hours": "Opening hours",
+        "other": "Something else"
+      },
+      "details": "Details",
+      "detailsHint": "Do not include personal or medical details.",
+      "send": "Send report",
+      "thanks": "Thank you. An admin will review this."
+    }
+  },
+  "reviews": {
+    "title": "Reviews",
+    "pageDescription": "What patients and families say about hospitals.",
+    "disclaimer": "Opinions, not clinical information. Reviews do not show medical capability or availability.",
+    "listTitle": "Reviews",
+    "filters": "Filter reviews",
+    "hospital": "Hospital",
+    "allHospitals": "All hospitals",
+    "chooseHospital": "Choose a hospital",
+    "rating": "Rating",
+    "anyRating": "Any rating",
+    "ratingLabel": "Your rating",
+    "starsLabel": "{value} out of 5 stars",
+    "starOption": "{count, plural, one {# star} other {# stars}}",
+    "verifiedOnly": "Verified visits only",
+    "verifiedVisit": "Verified visit",
+    "by": "By {name}",
+    "hospitalResponse": "Hospital response",
+    "report": "Report",
+    "reportTitle": "Report this review",
+    "reportReason": "Reason",
+    "reasons": {
+      "abusive": "Abusive",
+      "spam": "Spam",
+      "personal_info": "Contains personal information",
+      "false_info": "False information",
+      "other": "Other"
+    },
+    "sendReport": "Send report",
+    "reported": "Thanks. A moderator will review it.",
+    "loading": "Loading reviews",
+    "empty": "No reviews yet",
+    "loadMore": "Show more",
+    "writeTitle": "Write a review",
+    "signInToWrite": "Sign in to write a review.",
+    "signIn": "Sign in",
+    "text": "Your review",
+    "textHint": "Between {min} and {max} characters. Do not include names or medical details.",
+    "counter": "{count} of {max}",
+    "visitDate": "Visit date (optional)",
+    "submit": "Submit review",
+    "pendingTitle": "Pending moderation",
+    "pendingBody": "Thank you. Your review will appear after a moderator checks it.",
+    "duplicate": "You have already reviewed this hospital in the last 30 days.",
+    "errors": {
+      "hospital_required": "Choose a hospital",
+      "rating_required": "Choose a rating",
+      "too_short": "Please write at least 20 characters",
+      "too_long": "Please keep it under 1000 characters"
+    }
+  },
+  "auth": {
+    "loginTitle": "Sign in",
+    "registerTitle": "Create an account",
+    "guestEmergency": "Emergency? Search without signing in",
+    "demoTitle": "Demo sign-in",
+    "demoBody": "This build uses fictional demo accounts. Choose a role to continue.",
+    "continueAs": "Continue as {role}",
+    "email": "Email",
+    "password": "Password",
+    "passwordHint": "At least 8 characters.",
+    "signIn": "Sign in",
+    "forgot": "Forgot password?",
+    "resetSent": "If an account exists for this email, a reset link has been sent.",
+    "google": "Continue with Google",
+    "phoneTitle": "Or sign in with your phone",
+    "phone": "Phone number",
+    "code": "Code",
+    "sendCode": "Send code",
+    "verify": "Verify",
+    "noAccount": "New here?",
+    "register": "Create an account",
+    "haveAccount": "Already have an account?",
+    "name": "Your name",
+    "roleLabel": "Account type:",
+    "rolePatient": "Patient (hospital and ambulance staff accounts are by invitation only)",
+    "consentPrefix": "I agree to the",
+    "terms": "terms",
+    "and": "and",
+    "privacy": "privacy notice",
+    "createAccount": "Create account",
+    "demoRegister": "Demo mode: this creates a fictional patient account for this browser tab.",
+    "registerNote": "We only ask for what we need.",
+    "verifySent": "Check your email to verify your account, then sign in.",
+    "orgNote": "Hospitals and ambulance providers: sign in, then apply from your account. Staff accounts are created by invitation.",
+    "errors": {
+      "invalid": "The details you entered did not work. Check them and try again.",
+      "disabled": "This account is disabled. Contact support.",
+      "tooMany": "Too many attempts. Please wait a few minutes and try again.",
+      "network": "Can't reach the server. Check your connection.",
+      "unverified": "Please verify your email address first. Check your inbox.",
+      "consent": "Please agree to the terms and privacy notice.",
+      "weakPassword": "Use at least 8 characters.",
+      "registerFailed": "We could not create the account. Check the details and try again."
+    }
+  },
+  "demo": {
+    "title": "DEMO MODE. No real ambulance is dispatched.",
+    "body": "Ambulances, drivers and progress are simulated. For a real emergency call 108 or 112."
+  },
+  "ambulanceTypes": {
+    "basic": "Basic ambulance",
+    "als": "Advanced life support"
+  },
+  "ambulancePage": {
+    "title": "Request an ambulance",
+    "description": "Your request goes to ambulance providers nearby. It is not confirmed until a provider accepts.",
+    "call108Notice": "Call 108 if this is life-threatening.",
+    "call108": "Call 108",
+    "noProvidersTitle": "No ambulance providers cover this area",
+    "noProvidersBody": "Call 108 for a government ambulance, or call the hospital directly.",
+    "callHospital": "Call {name}",
+    "staffNote": "Staff accounts cannot request ambulances. Sign out to request as a patient."
+  },
+  "bookingForm": {
+    "progress": "Request progress",
+    "steps": {
+      "pickup": "Pickup location",
+      "details": "Destination and ambulance",
+      "contact": "Your contact",
+      "review": "Review and confirm"
+    },
+    "address": "Landmark or address details",
+    "addressHint": "Optional. Helps the crew find you.",
+    "consent": "I agree to share this pickup location with the ambulance provider and driver for this trip.",
+    "destination": "Destination",
+    "nearestSuitable": "Nearest suitable hospital",
+    "type": "Ambulance type",
+    "typeHint": {
+      "basic": "Transport with basic first aid",
+      "als": "Paramedic care and equipment on board"
+    },
+    "patients": "Number of patients",
+    "patientsN": "{count, plural, one {# patient} other {# patients}}",
+    "note": "Note for the crew",
+    "noteHint": "Optional. Do not include medical history.",
+    "counter": "{count} of {max}",
+    "name": "Contact name",
+    "phone": "Mobile number",
+    "phoneHint": "Indian mobile number, 10 digits.",
+    "otpWhy": "We check your number so the crew can reach you and to prevent fake requests.",
+    "sendCode": "Send code",
+    "demoOtp": "Demo mode: no SMS is sent. Enter 123456.",
+    "codeSent": "Code sent to {phone}",
+    "code": "6-digit code",
+    "verify": "Verify number",
+    "phoneVerified": "Number verified",
+    "signedInNoOtp": "You are signed in. No code needed.",
+    "reviewIntro": "Check the details before you confirm.",
+    "pickupShort": "Pickup",
+    "currentLocation": "Your current location",
+    "contactShort": "Contact",
+    "sharedWith": "What is shared, and with whom",
+    "shareProvider": "Ambulance provider: pickup, contact name and number",
+    "shareDriver": "Assigned driver: pickup, first name and number",
+    "shareHospital": "Destination hospital: that an ambulance is coming, no phone number",
+    "requestedNote": "After you confirm, your request shows as Requested until a provider accepts it.",
+    "confirm": "Confirm request",
+    "retry": "Try again",
+    "back": "Back",
+    "next": "Next",
+    "errors": {
+      "pickup": "Choose a pickup location",
+      "consent": "Please agree to share the pickup location",
+      "name": "Enter a contact name",
+      "phone": "Enter a valid 10-digit mobile number",
+      "otp": "Verify your number to continue",
+      "code": "That code did not match. Try again.",
+      "send": "Could not send the code. Try again, or call 108."
+    }
+  },
+  "booking": {
+    "title": "Ambulance request",
+    "loading": "Loading request",
+    "headingRequested": "Request sent, not yet confirmed",
+    "heading": "Status: {status}",
+    "requestedAt": "Requested",
+    "notConfirmedYet": "Looking for an available provider. This is not confirmed until a provider accepts.",
+    "timeout": "We keep searching for {m}:{s} more",
+    "progress": "Progress",
+    "announce": "Status changed to {status}",
+    "done": "done",
+    "current": "current step",
+    "upcoming": "not yet",
+    "actions": "Actions",
+    "callProvider": "Call provider",
+    "callHospital": "Call {name}",
+    "share": "Share tracking link",
+    "shareReady": "Link ready. It stops working",
+    "shareUrl": "Tracking link",
+    "copy": "Copy link",
+    "cancel": "Cancel request",
+    "cancelTitle": "Cancel this request?",
+    "cancelBody": "The provider will be told. If you still need help, call 108 or 112.",
+    "cancelConfirm": "Yes, cancel",
+    "history": "Event history",
+    "offlineTitle": "You are offline",
+    "offlineBody": "Last known status: {status}. Emergency numbers still work.",
+    "completedTitle": "Trip completed",
+    "completedBody": "We hope you are safe. You can review the hospital later from the Reviews page.",
+    "failureBody": "Please try another provider or call an emergency number now.",
+    "tryAnother": "Try another provider",
+    "failure": {
+      "Rejected": "No provider could take this request",
+      "TimedOut": "No provider accepted in time",
+      "Failed": "The trip could not be completed"
+    },
+    "notes": {
+      "demo_simulated_accept": "Simulated provider accepted (demo)",
+      "searching_timeout": "No provider accepted in time"
+    },
+    "by": {
+      "system": "system",
+      "patient": "you",
+      "hospital_admin": "hospital",
+      "hospital_staff": "hospital",
+      "dispatcher": "dispatcher",
+      "driver": "driver",
+      "super_admin": "admin"
+    },
+    "status": {
+      "Requested": "Requested",
+      "Searching": "Searching",
+      "Accepted": "Accepted",
+      "Assigned": "Assigned",
+      "EnRoute": "En Route",
+      "Arrived": "Arrived",
+      "Completed": "Completed",
+      "Cancelled": "Cancelled",
+      "Rejected": "Rejected",
+      "TimedOut": "Timed out",
+      "Failed": "Failed"
+    },
+    "driver": {
+      "title": "Your ambulance",
+      "provider": "Provider",
+      "vehicle": "Vehicle",
+      "driver": "Driver",
+      "phone": "Driver phone",
+      "notAssigned": "Being assigned",
+      "reveal": "Show driver number",
+      "callDriver": "Call driver"
+    },
+    "live": {
+      "title": "Live location",
+      "pickup": "Pickup point",
+      "ambulance": "Ambulance",
+      "mapLabel": "Map showing the ambulance and pickup point",
+      "eta": "Arriving in about {eta} (estimate)",
+      "etaUnknown": "Arrival time unknown",
+      "updated": "location updated",
+      "unavailable": "Location not available",
+      "unavailableBody": "We will show the ambulance as soon as a fresh location arrives. No arrival time is shown without one."
+    }
+  },
+  "portal": {
+    "nav": {
+      "label": "Hospital portal",
+      "title": "Hospital portal",
+      "dashboard": "Dashboard",
+      "availability": "Update availability",
+      "requests": "Incoming requests"
+    },
+    "dashboard": {
+      "title": "Hospital dashboard",
+      "unverifiedTitle": "Your hospital is not verified yet",
+      "unverifiedBody": "Patients see your details as unverified and no availability is shown as confirmed until an admin approves your documents.",
+      "staleTitle": "Availability is out of date",
+      "staleBody": "Patients see it as Reported after {minutes} minutes. Last updated",
+      "neverTitle": "Availability has never been updated",
+      "neverBody": "Patients see bed numbers as Unknown.",
+      "updateNow": "Update now",
+      "requests": "Open requests",
+      "openRequests": "View incoming requests",
+      "availabilityUpdated": "Availability last updated",
+      "never": "Never"
+    },
+    "verification": {
+      "title": "Verification",
+      "status": {
+        "not_submitted": "Not submitted",
+        "pending": "Pending review",
+        "approve": "Approved",
+        "reject": "Rejected",
+        "request_info": "More information requested",
+        "suspend": "Suspended"
+      },
+      "submitted": "Submitted",
+      "reason": "Reason: {reason}",
+      "upload": "Upload documents",
+      "uploadHint": "PDF, PNG or JPEG, up to 2 MB each, up to 5 files.",
+      "submit": "Submit for verification",
+      "uploaded": "Documents submitted. An admin will review them.",
+      "adminOnly": "Only the hospital admin can submit documents."
+    },
+    "checklist": {
+      "title": "Profile completeness",
+      "progress": "{done} of {total} complete",
+      "done": "done",
+      "todo": "to do",
+      "items": {
+        "address": "Address",
+        "coordinates": "Map location",
+        "hours": "Opening and emergency hours",
+        "facilities": "At least 3 facilities",
+        "departments": "Departments"
+      }
+    },
+    "profile": {
+      "title": "Hospital profile",
+      "readOnly": "Only the hospital admin can edit the profile.",
+      "name": "Hospital name",
+      "address": "Address",
+      "city": "City",
+      "phone": "Main phone",
+      "operatingHours": "Opening hours",
+      "emergencyHours": "Emergency hours",
+      "lat": "Latitude",
+      "lng": "Longitude",
+      "pinHere": "Set map pin to my current location",
+      "emergency24x7": "24x7 emergency department",
+      "save": "Save profile"
+    },
+    "facilities": {
+      "title": "Facilities and capabilities",
+      "note": "Facilities you declare show to patients as Reported. They become Confirmed after an admin verifies your evidence.",
+      "lastVerified": "Last verified",
+      "notListed": "Not listed",
+      "declare": "We have this",
+      "markAbsent": "Not available"
+    },
+    "records": {
+      "departments": {
+        "title": "Departments"
+      },
+      "specialists": {
+        "title": "Specialists"
+      },
+      "confirmed": "Confirmed",
+      "pendingVerification": "Awaiting verification",
+      "onDuty": "On duty",
+      "remove": "Remove {name}",
+      "removeTitle": "Remove {name}?",
+      "removeConfirm": "Remove",
+      "name": "Name",
+      "specialty": "Specialty",
+      "add": "Add"
+    },
+    "staff": {
+      "title": "Staff",
+      "admin": "Admin",
+      "enable": "Enable",
+      "disable": "Disable",
+      "status": {
+        "active": "active",
+        "invited": "invited",
+        "disabled": "disabled"
+      },
+      "permissionsFor": "Permissions for {name}",
+      "perm": {
+        "updateAvailability": "Update availability",
+        "respondRequests": "Respond to requests",
+        "viewPatientContact": "See patient contact"
+      },
+      "invite": "Invite staff",
+      "name": "Name",
+      "email": "Email",
+      "permissions": "Permissions",
+      "send": "Send invite"
+    },
+    "audit": {
+      "title": "Recent changes"
+    },
+    "stepper": {
+      "decrease": "Decrease {label}",
+      "increase": "Increase {label}",
+      "capacity": "Capacity {max}",
+      "previous": "previously {value}"
+    },
+    "availability": {
+      "title": "Update availability",
+      "description": "Set the numbers available right now and confirm. Takes under 30 seconds.",
+      "current": "Current",
+      "lastBy": "by {name}",
+      "pendingTitle": "Update waiting to send",
+      "pendingBody": "You are offline. Your update is saved on this device and will send when you reconnect.",
+      "conflictTitle": "Someone else updated availability first",
+      "conflictBody": "Latest from {name}: ICU {icu}, emergency {er}, ventilators {vent}. Check, then apply your change again.",
+      "reapply": "Apply my change again",
+      "saved": "Availability updated. Patients now see it as Confirmed.",
+      "bigChange": "Big change from {from} to {to}. Please double-check.",
+      "capacity": "Edit total capacity",
+      "total": {
+        "icuBeds": "Total ICU beds",
+        "emergencyBeds": "Total emergency beds",
+        "ventilators": "Total ventilators"
+      },
+      "services": "Services available now",
+      "service": {
+        "ct": "CT scanner working",
+        "cathLab": "Cath lab on call",
+        "specialistOnDuty": "Specialist on duty"
+      },
+      "confirm": "Confirm availability",
+      "serverTime": "The time is set by our server, not this device.",
+      "history": "Last 20 updates",
+      "when": "When",
+      "by": "By"
+    },
+    "requests": {
+      "title": "Incoming requests",
+      "description": "Patients who chose to share their details with your hospital.",
+      "soundOn": "Sound alerts on",
+      "soundOff": "Sound alerts off",
+      "filterLabel": "Show",
+      "filters": {
+        "open": "Open",
+        "accepted": "Accepted",
+        "declined": "Declined",
+        "arrived": "Arrived",
+        "all": "All"
+      },
+      "reconnecting": "Reconnecting… showing the last list received.",
+      "contactPermission": "You do not have permission to see patient contact details.",
+      "count": "{count, plural, =0 {No requests} one {# request} other {# requests}}",
+      "empty": "No requests",
+      "emptyBody": "New requests appear here automatically.",
+      "new": "New",
+      "age": "Received",
+      "eta": "Arriving in about {eta} (estimate)",
+      "etaUnknown": "Arrival time unknown",
+      "contact": "Contact",
+      "noContact": "Not shared",
+      "contactHidden": "Hidden (needs permission)",
+      "status": {
+        "new": "Waiting for response",
+        "accepted": "Accepted",
+        "declined": "Declined",
+        "arrived": "Patient arrived",
+        "expired": "Expired"
+      },
+      "by": "by {name}",
+      "reason": "Reason: {reason}",
+      "accept": "Accept",
+      "decline": "Decline",
+      "arrived": "Mark patient arrived",
+      "declineTitle": "Decline this request",
+      "declineBody": "Give a short reason. The patient can then go elsewhere.",
+      "reasonLabel": "Reason",
+      "reasonShort": "Please give a reason (at least 3 characters)",
+      "confirmDecline": "Decline request",
+      "conflict": "A colleague already handled this request. The list has been refreshed."
+    }
+  },
+  "dispatch": {
+    "title": "Dispatch",
+    "stats": {
+      "accepted": "Accepted",
+      "rejected": "Rejected",
+      "completed": "Completed",
+      "active": "Active now"
+    },
+    "statsDef": {
+      "accepted": "Requests your team accepted.",
+      "rejected": "Requests your team rejected.",
+      "completed": "Trips completed.",
+      "active": "Trips in progress."
+    },
+    "incoming": "Incoming requests",
+    "noIncoming": "No requests waiting",
+    "patients": "{count, plural, one {# patient} other {# patients}}",
+    "expiresIn": "Expires in",
+    "pickup": "Pickup",
+    "destination": "Destination",
+    "nearest": "Nearest suitable hospital",
+    "received": "Received",
+    "accept": "Accept",
+    "reject": "Reject",
+    "noVehicles": "No vehicles available. Consider rejecting so the patient can try another provider.",
+    "active": "Active trips",
+    "noActive": "No active trips",
+    "unassigned": "No vehicle yet",
+    "assign": "Assign vehicle",
+    "mapLabel": "Map of active trips",
+    "vehicle": "Vehicle",
+    "fleet": "Fleet",
+    "registration": "Registration",
+    "type": "Type",
+    "driver": "Driver",
+    "status": "Status",
+    "actions": "Actions",
+    "vehicleStatus": {
+      "available": "Available",
+      "busy": "On a trip",
+      "offline": "Offline"
+    },
+    "onTrip": "On a trip",
+    "setOffline": "Set offline",
+    "setAvailable": "Set available",
+    "addVehicle": "Add vehicle",
+    "addDriver": "Add driver",
+    "driverName": "Driver name",
+    "driverPhone": "Driver mobile",
+    "add": "Add",
+    "serviceArea": "Service area",
+    "serviceAreaHint": "Requests within this distance of your base reach your queue.",
+    "radiusKm": "Radius (km)",
+    "saveArea": "Save area",
+    "areaSaved": "Service area saved",
+    "drivers": "Drivers",
+    "assignTitle": "Assign vehicle and driver",
+    "assignBody": "Only available vehicles are listed.",
+    "chooseVehicle": "Choose a vehicle",
+    "chooseDriver": "Choose a driver",
+    "confirmAssign": "Assign",
+    "vehicleTaken": "That vehicle was just assigned to another trip. The list has been refreshed; choose another.",
+    "rejectTitle": "Reject this request",
+    "rejectReason": "Reason",
+    "confirmReject": "Reject request"
+  },
+  "driver": {
+    "title": "Current trip",
+    "noAssignment": "No trip assigned",
+    "noAssignmentBody": "When a dispatcher assigns you a trip it appears here.",
+    "pickup": "Pickup",
+    "destination": "Destination",
+    "contact": "Patient contact",
+    "patients": "{count, plural, one {# patient} other {# patients}}",
+    "note": "Note",
+    "openMaps": "Open in maps",
+    "call": "Call contact",
+    "callContact": "Call {name}",
+    "step": {
+      "EnRoute": "Start trip",
+      "Arrived": "Arrived",
+      "Completed": "Complete trip"
+    },
+    "invalidTransition": "That step is not possible now. The trip has been refreshed.",
+    "sharingOn": "Sharing location",
+    "sharingOff": "Location sharing is off",
+    "lastSent": "Last sent",
+    "buffered": "{count, plural, one {# point waiting to send} other {# points waiting to send}}",
+    "locationDenied": "Location permission denied. Turn it on in your phone settings.",
+    "startSharing": "Start sharing location",
+    "stopSharing": "Stop sharing",
+    "sharingNotAllowed": "Location sharing is only possible during an active trip.",
+    "history": "Recent trips",
+    "noHistory": "No trips yet."
+  },
+  "table": {
+    "filter": "Filter",
+    "empty": "Nothing to show",
+    "select": "Select",
+    "selectRow": "Select {row}",
+    "actions": "Actions",
+    "open": "Open",
+    "pagination": "Pagination",
+    "pageOf": "Page {page} of {pages} · {total} rows",
+    "prev": "Previous page",
+    "next": "Next page"
+  },
+  "audit": {
+    "empty": "No entries.",
+    "system": "System",
+    "before": "Before",
+    "after": "After"
+  },
+  "admin": {
+    "nav": {
+      "label": "Admin",
+      "dashboard": "Dashboard",
+      "hospitals": "Hospitals",
+      "providers": "Providers",
+      "analytics": "Analytics"
+    },
+    "kpi": {
+      "definition": "What {label} means",
+      "error": "Could not load",
+      "noData": "No data",
+      "up": "Up",
+      "down": "Down"
+    },
+    "chart": {
+      "viewTable": "View as table",
+      "viewChart": "View as chart",
+      "empty": "No data for this period"
+    },
+    "dashboard": {
+      "title": "Admin dashboard",
+      "window": "Figures cover the last 7 days.",
+      "kpis": "Key indicators",
+      "kpi": {
+        "searchLatencyP95Ms": "Search latency p95",
+        "dataFreshnessPct": "Data freshness",
+        "bookingAcceptanceRate": "Booking acceptance",
+        "failedRequests": "Failed requests",
+        "dispatchCompletionRate": "Dispatch completion"
+      },
+      "kpiDef": {
+        "searchLatencyP95Ms": "95% of successful searches finished within this time.",
+        "dataFreshnessPct": "Verified hospitals whose availability is within its freshness window.",
+        "bookingAcceptanceRate": "Requests accepted by a provider, out of those accepted, rejected or timed out.",
+        "failedRequests": "Searches that errored plus bookings that failed.",
+        "dispatchCompletionRate": "Accepted trips that reached Completed, out of finished trips."
+      },
+      "queues": "Needs attention",
+      "queue": {
+        "pendingHospitals": "Hospitals awaiting verification",
+        "flaggedAvailability": "Reports of incorrect data",
+        "reportedReviews": "Reported reviews",
+        "pendingReviews": "Reviews awaiting moderation",
+        "providerApplications": "Provider and hospital applications"
+      },
+      "health": "Integration health",
+      "integration": {
+        "maps": "Maps routing",
+        "ai": "AI matching",
+        "notifications": "Notifications",
+        "database": "Database"
+      },
+      "healthStatus": {
+        "ok": "OK",
+        "degraded": "Degraded",
+        "fallback": "Fallback in use",
+        "unknown": "Not checked yet",
+        "down": "Down"
+      },
+      "demoStatus": "Demo mode: {state}",
+      "on": "on",
+      "off": "off",
+      "backend": "Backend: {db}, auth: {auth}",
+      "audit": "Recent audit log"
+    },
+    "config": {
+      "title": "Configuration",
+      "weights": "Ranking weights",
+      "weight": {
+        "travel": "Travel time",
+        "availability": "Availability",
+        "freshness": "Freshness",
+        "distance": "Distance",
+        "specialist": "Specialist",
+        "rating": "Rating"
+      },
+      "total": "Total: {total}",
+      "mustEqual": "Weights must add up to exactly 1.00 before you can save.",
+      "freshness": "Freshness windows",
+      "availabilityMinutes": "Availability (minutes)",
+      "facilityDays": "Facility verification (days)",
+      "radius": "Search radius",
+      "defaultRadius": "Default (km)",
+      "maxRadius": "Maximum (km)",
+      "save": "Save configuration",
+      "saved": "Configuration saved and logged.",
+      "demoMode": "Demo mode",
+      "demoModeHint": "Shows the DEMO MODE banner and uses simulated providers.",
+      "demoOnTitle": "Turn demo mode on?",
+      "demoOnBody": "New ambulance requests will use simulated providers and show the demo banner.",
+      "demoOffTitle": "Turn demo mode off?",
+      "demoOffBody": "New requests will go to real providers only. Make sure real providers are approved first.",
+      "confirm": "Confirm"
+    },
+    "hospitals": {
+      "title": "Hospital verification",
+      "tabs": "Sections",
+      "tabHospitals": "Hospitals",
+      "tabFlags": "Flagged data ({count})",
+      "tabReviews": "Review moderation ({count})",
+      "status": "Status",
+      "all": "All",
+      "name": "Name",
+      "freshness": "Availability freshness",
+      "flags": "Open reports",
+      "detail": "Hospital",
+      "decided": "Decision saved and logged.",
+      "resolution": "How was it resolved?",
+      "resolve": "Resolve",
+      "noFlags": "No open reports.",
+      "flagField": {
+        "availability": "Availability",
+        "facilities": "Facilities",
+        "contact": "Contact",
+        "address": "Address",
+        "hours": "Hours",
+        "other": "Other"
+      },
+      "reviews": {
+        "pending": "Awaiting moderation",
+        "reported": "Reported by users"
+      },
+      "noReviews": "Nothing here.",
+      "approve": "Approve",
+      "rejectReview": "Reject",
+      "keep": "Keep",
+      "remove": "Remove"
+    },
+    "verify": {
+      "address": "Address",
+      "phone": "Phone",
+      "registry": "Registry reference",
+      "submitted": "Submitted",
+      "documents": "Documents",
+      "noDocuments": "No documents submitted.",
+      "docFailed": "The document could not be loaded.",
+      "claimed": "Facilities claimed",
+      "confirmed": "confirmed",
+      "claimedOnly": "claimed only",
+      "checklist": "Verification checklist",
+      "check": {
+        "registrationCertificate": "Registration certificate checked",
+        "addressMatch": "Address matches records",
+        "phoneVerified": "Phone call verified",
+        "facilityEvidence": "Facility evidence checked"
+      },
+      "decision": "Decision",
+      "decisions": {
+        "approve": "Approve",
+        "reject": "Reject",
+        "request_info": "Request more information",
+        "suspend": "Suspend"
+      },
+      "reason": "Reason",
+      "reasonRequired": "Required for this decision. The hospital will see it.",
+      "reasonOptional": "Optional.",
+      "reasonShort": "Please give a reason (at least 5 characters)",
+      "submit": {
+        "approve": "Approve hospital",
+        "reject": "Reject hospital",
+        "request_info": "Request information",
+        "suspend": "Suspend hospital"
+      },
+      "trail": "Audit trail"
+    },
+    "providers": {
+      "title": "Ambulance providers",
+      "applications": "Applications",
+      "noApplications": "No pending applications",
+      "appType": {
+        "provider": "Ambulance provider",
+        "hospital": "Hospital"
+      },
+      "providers": "Providers",
+      "name": "Name",
+      "status": "Status",
+      "statuses": {
+        "pending": "Pending",
+        "approved": "Approved",
+        "rejected": "Rejected",
+        "suspended": "Suspended"
+      },
+      "area": "Service radius",
+      "actions": "Actions",
+      "demo": "Demo",
+      "approve": "Approve",
+      "approveTitle": "Approve this provider?",
+      "reject": "Reject",
+      "rejectTitle": "Reject this application?",
+      "suspend": "Suspend",
+      "suspendTitle": "Suspend this provider?",
+      "suspendBody": "Suspended providers receive no new requests. Trips in progress continue.",
+      "reinstate": "Reinstate",
+      "reinstateTitle": "Reinstate this provider?",
+      "reason": "Reason",
+      "reasonHint": "Required. At least 5 characters.",
+      "done": "Decision saved and logged.",
+      "performance": "Performance (last 30 days)",
+      "acceptance": "Acceptance rate",
+      "response": "Median response",
+      "completion": "Completion rate",
+      "trips": "Trips",
+      "performanceNote": "System performance only. It does not describe clinical quality.",
+      "demoTitle": "Demo providers",
+      "demoMode": "Demo mode",
+      "demoModeHint": "Shows the DEMO MODE banner on ambulance screens.",
+      "simulate": "Simulate dispatch",
+      "simulateHint": "Simulated providers accept and run trips automatically.",
+      "acceptDelay": "Seconds before a simulated provider accepts",
+      "stepDelay": "Seconds between simulated steps",
+      "saveDemo": "Save demo settings",
+      "demoSaved": "Demo settings saved."
+    },
+    "analytics": {
+      "title": "Analytics",
+      "disclaimer": "System performance metrics, not clinical effectiveness.",
+      "syntheticNote": "In demo builds most of this history is synthetic seed data.",
+      "partial": "Some days in this period have no data.",
+      "export": "Export CSV",
+      "filters": "Filters",
+      "from": "From",
+      "to": "To",
+      "category": "Category",
+      "city": "City",
+      "all": "All",
+      "date": "Date",
+      "stage": "Stage",
+      "count": "Count",
+      "tier": "Tier",
+      "hospitals": "Hospitals",
+      "cause": "Cause",
+      "acceptance": "Acceptance %",
+      "completion": "Completion %",
+      "charts": {
+        "searches": "Searches per day",
+        "latency": "Search latency",
+        "noMatch": "No confident match rate",
+        "funnel": "Booking funnel",
+        "acceptance": "Acceptance and completion",
+        "freshness": "Data freshness",
+        "failures": "Failures by cause"
+      },
+      "captions": {
+        "searches": "Number of emergency searches per day.",
+        "latency": "Median (p50) and 95th percentile (p95) time for successful searches, in milliseconds.",
+        "noMatch": "Share of successful searches that found no hospital with every required capability.",
+        "funnel": "Bookings that reached each stage in this period.",
+        "acceptance": "Share of requests accepted by a provider, and share of accepted trips completed.",
+        "freshness": "Verified hospitals by current availability confidence tier.",
+        "failures": "Search errors and bookings that ended without completion, by cause."
+      }
+    }
+  },
+  "utility": {
+    "notFound": {
+      "title": "Page not found",
+      "body": "This page does not exist or has moved.",
+      "home": "Go to home page",
+      "browse": "Browse hospitals"
+    },
+    "error": {
+      "title": "Something went wrong",
+      "body": "This page could not load. You can try again, or browse hospitals.",
+      "retry": "Try again",
+      "browse": "Browse hospitals"
+    },
+    "offline": {
+      "title": "You are offline",
+      "body": "You can still call for help. Phone calls do not need the internet.",
+      "step1": "If someone is unconscious, not breathing, or bleeding heavily, call 112 now.",
+      "step2": "For an ambulance, call 108.",
+      "step3": "Stay with the person and keep them still unless they are in danger.",
+      "step4": "When you are back online, reload this page to search for hospitals.",
+      "cached": "Pages you opened recently may still be available."
+    }
+  },
+  "legal": {
+    "privacy": {
+      "title": "Privacy notice",
+      "updated": "Demo build. Review with a lawyer before real use.",
+      "p1": "We collect only what is needed: your location for a search (not stored with the search), and for ambulance requests your contact name and phone number.",
+      "p2": "Location shared with a hospital is rounded to about 1 km and deleted after 30 days. Ambulance location points are deleted 24 hours after the trip.",
+      "p3": "Phone numbers are hidden from anyone who does not need them, and never appear in links, logs or analytics.",
+      "p4": "Analytics record only anonymous events. We never record your symptoms text, coordinates or phone number for analytics.",
+      "p5": "You can ask to delete your account from your profile. Your details are anonymised within 30 days."
+    },
+    "terms": {
+      "title": "Terms of use",
+      "updated": "Demo build. Review with a lawyer before real use.",
+      "p1": "ResQCare AI is an information and coordination tool. It does not replace emergency services.",
+      "p2": "In a life-threatening emergency, call 112 or 108 first.",
+      "p3": "Hospital information may be incomplete or out of date. Confidence labels show how sure we are. Always call to confirm.",
+      "p4": "Do not misuse ambulance requests. Fake requests may be reported to the authorities.",
+      "p5": "In demo mode no real ambulance is dispatched and all hospitals are fictional."
+    },
+    "disclaimer": {
+      "title": "Medical disclaimer",
+      "updated": "Please read before relying on this service.",
+      "p1": "ResQCare AI does not give medical advice, diagnosis or treatment.",
+      "p2": "Matching uses the facilities hospitals have on record. It cannot judge a patient's condition.",
+      "p3": "Ratings and reviews are opinions. They do not show what a hospital can treat.",
+      "p4": "Travel times and distances are estimates.",
+      "p5": "If in doubt, call 112."
+    }
+  }
+}

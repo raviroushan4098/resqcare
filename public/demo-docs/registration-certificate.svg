@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="Sample registration certificate, fictional">
+  <rect width="600" height="400" fill="#fff" stroke="#12284C" stroke-width="6"/>
+  <text x="300" y="70" font-family="sans-serif" font-size="28" text-anchor="middle" fill="#12284C">SAMPLE ONLY · FICTIONAL</text>
+  <text x="300" y="130" font-family="sans-serif" font-size="22" text-anchor="middle" fill="#12284C">Hospital Registration Certificate</text>
+  <text x="300" y="200" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#5B6B7F">Registry ref: DEMO-REG-XXXX</text>
+  <text x="300" y="240" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#5B6B7F">Issued for demonstration of the verification flow</text>
+  <text x="300" y="340" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#C62828">Not a real document</text>
+</svg>

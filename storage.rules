@@ -1,0 +1,10 @@
+rules_version = '2';
+// Verification documents are private. The server uploads them with the Admin
+// SDK and admins view them through short-lived signed URLs.
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

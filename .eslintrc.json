@@ -1,0 +1,33 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:jsx-a11y/strict"
+  ],
+  "plugins": [
+    "jsx-a11y"
+  ],
+  "rules": {
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
+      }
+    ],
+    "jsx-a11y/no-noninteractive-tabindex": [
+      "error",
+      {
+        "tags": [],
+        "roles": [
+          "tabpanel",
+          "region"
+        ]
+      }
+    ]
+  },
+  "ignorePatterns": [
+    "public/mockServiceWorker.js"
+  ]
+}
